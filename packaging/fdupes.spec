@@ -19,6 +19,7 @@ Release:        42.66
 License:        X11/MIT
 Source0:        %name-%{version}.tar.bz2
 Source1:        macros.fdupes
+Source1001: packaging/fdupes.manifest 
 Patch0:         %name.diff
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
@@ -37,6 +38,7 @@ Authors:
 %patch0
 
 %build
+cp %{SOURCE1001} .
 make
 
 %install
@@ -48,6 +50,7 @@ install -D -m644 %{SOURCE1} $RPM_BUILD_ROOT/etc/rpm/macros.fdupes
 rm -rf $RPM_BUILD_ROOT
 
 %files
+%manifest fdupes.manifest
 %defattr(-, root, root)
 %doc CHANGES
 %{_prefix}/bin/fdupes
