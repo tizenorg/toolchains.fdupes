@@ -27,6 +27,7 @@ FDUPES is a program for identifying or deleting duplicate files
 residing within specified directories
 
 
+
 Authors:
 --------
     Adrian Lopez <adrian2@caribe.net>
